@@ -1,0 +1,8 @@
+jax
+optax
+flax
+tensorboardX
+tensorflow_datasets
+tiktoken
+tqdm
+wandb
