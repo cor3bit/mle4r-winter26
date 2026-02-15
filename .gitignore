@@ -1,5 +1,7 @@
 # Custom Folders
 artifacts/
+scripts/wandb
+
 
 # VSCode
 .vscode/
