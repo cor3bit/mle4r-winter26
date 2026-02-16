@@ -2,8 +2,9 @@
 
 Practical companion to the [IMT Machine Learning course](https://cse.lab.imtlucca.it/~bemporad/ml.html).
 
-The course covers key techniques and best practices for designing, running,
-and analyzing machine learning experiments.
+This course teaches how to design, run, and audit machine learning experiments
+in a research-grade setting. We move from a minimal training loop to a structured,
+reproducible experiment pipeline.
 
 The focus is on:
 
@@ -17,22 +18,22 @@ The focus is on:
 ## Syllabus
 
 1) 🌍 **Big Picture**  
-   Why ML experiments are hard today (scale, instability, infrastructure)
+   Why ML experiments are hard today: scale, brittleness, infrastructure
 
 2) 💻 **Dev Setup in 2026**  
-   IDE + AI Assist + Git + experiment tracking
+   A minimal researcher stack: IDE + AI Assist, Git, environments, tracking
 
 3) 🔁 **Training Script (Vanilla)**  
-   From a minimal loop to a reproducible experiment
+   Build the minimal loop: data → model → loss → optimizer → eval
 
 4) 📊 **Training Script (Research-Grade)**  
-   Configs, logging, outputs, scheduling runs, simple HPO
+   Make runs comparable: configs, logging, checkpoints, run grids, basic HPO
 
 5) 🧾 *(Optional)* **Working with Text**  
-   Mini Transformer experiment
+   Run a tiny Transformer experiment (tokenization, batching, evaluation)
 
 6) ⚡ *(Optional)* **Hardware for ML**  
-   Choosing the right GPU and understanding resource constraints
+   Scope experiments: VRAM/RAM/disk, throughput bottlenecks, GPU selection
 
 ---
 
@@ -42,16 +43,16 @@ The focus is on:
 
 [mle4r-winter26.pdf](slides/mle4r-winter26.pdf)
 
-### Notebooks: Local + Cloud
+### Notebooks
 
-| # | Subchapter       | Local                                                              | Cloud                                                                                                            |
-|--:|------------------|--------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
-| 1 | Data             | [1_data.ipynb](notebooks/1_data.ipynb)                             | [Data (Cloud)](https://drive.google.com/file/d/1hrq7eBYuVUNZYHBE3_KFqON1cV3QvtyR/view?usp=sharing)               |
-| 2 | Model            | [2_model.ipynb](notebooks/2_model.ipynb)                           | [Model (Cloud)](https://drive.google.com/file/d/1oJRl5TVLaA-yDLTiw4Jx7N5jz9jfjDT4/view?usp=sharing)              |
-| 3 | Optimizer + Loss | [3_optimizer_and_loss.ipynb](notebooks/3_optimizer_and_loss.ipynb) | [Optimizer + Loss (Cloud)](https://drive.google.com/file/d/1JxdkUEY7tEFHbjh3Pz_x1sQDS1WQOlMF/view?usp=sharing)   |
-| 4 | Training Loop    | [4_training_loop.ipynb](notebooks/4_training_loop.ipynb)           | [Training Loop (Cloud)](https://drive.google.com/file/d/1FLYSyMxnIICsfMamB1B63CuuRUUHply0/view?usp=sharing)      |
-| 5 | Training Script  | [5_training_script.ipynb](notebooks/5_training_script.ipynb)       | [Training Script (Colab)](https://colab.research.google.com/drive/1Rjgv9ylEZCDldchHU1IlFQ7L0lVi8dYZ?usp=sharing) |
-| 6 | Transformers     | [6_transformers.ipynb](notebooks/6_transformers.ipynb)             | [Transformers (Colab)](https://colab.research.google.com/drive/1_jm5WK7lyLS5F9vqTnZMUPqfOb48vn2c?usp=sharing)    |
+| # | Section          | Notebook                                                           |
+|--:|------------------|--------------------------------------------------------------------|
+| 1 | Data             | [1_data.ipynb](notebooks/1_data.ipynb)                             |
+| 2 | Model            | [2_model.ipynb](notebooks/2_model.ipynb)                           |
+| 3 | Optimizer + Loss | [3_optimizer_and_loss.ipynb](notebooks/3_optimizer_and_loss.ipynb) |
+| 4 | Training Loop    | [4_training_loop.ipynb](notebooks/4_training_loop.ipynb)           |
+| 5 | Training Script  | [5_training_script.ipynb](notebooks/5_training_script.ipynb)       |
+| 6 | Transformers     | [6_transformers.ipynb](notebooks/6_transformers.ipynb)             |
 
 ### Scripts
 
@@ -63,10 +64,18 @@ The focus is on:
 These illustrate the progression:
 
 ```
-
-One run → Configurable script → Run grid → Hyperparameter search
-
+One run
+↓
+Configurable script
+↓
+Run grid (seed × hyperparameters)
+↓
+Structured hyperparameter search
 ```
+
+All materials are self-contained and runnable locally (CPU or single GPU).
+
+
 
 ---
 
